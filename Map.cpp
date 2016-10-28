@@ -84,7 +84,7 @@ void DrawMap()
     if ( abs( distance.x ) < 80 || abs( distance.y ) < 48 )
     {
       //arduboy.drawBitmap( distance.x + 56, distance.y + 24, Planets[i]->BitMap, 16, 16, 1 );
-      arduboy.display.drawBitmap( distance.x + 56, distance.y + 24, Planets[i]->BitMap );
+      arduboy.display.drawBitmap( distance.x + 38, distance.y + 20, Planets[i]->BitMap );
 
       if ( distance.MagnitudeSquared() < 256 && LatestPlanetEncountered == NULL && !(Planets[i]->Contacted) )
       {

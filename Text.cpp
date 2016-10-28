@@ -309,8 +309,8 @@ PROGMEM const char Repair_Combat_C[] = "Situation Report";
 
 const char* Repair_Combat[] { Repair_Combat_A, Repair_Combat_B, Repair_Combat_C };
 
-PROGMEM const char Flee_Combat_A[] = "Ensign, get us out of here";
-PROGMEM const char Flee_Combat_B[] = "Shields! Full retreat!";
+PROGMEM const char Flee_Combat_A[] = "Abort! Abort!";
+PROGMEM const char Flee_Combat_B[] = "Shields! Retreat!";
 PROGMEM const char Flee_Combat_C[] = "Full Reverse, go!";
 
 const char* Flee_Combat[] { Flee_Combat_A, Flee_Combat_B, Flee_Combat_C };
@@ -375,8 +375,8 @@ PROGMEM const char ShieldsHolding[] = "Shields holding...";
 PROGMEM const char ShieldsDown[] = "Shields are down!\n";
 PROGMEM const char DamageReportCrew[] = "We have casualties!";
 PROGMEM const char DamageReportHull[] = "Hull damage!";
-PROGMEM const char DamageReportWeapons[] = "Weapons hit, Atk down!";
-PROGMEM const char DamageReportShields[] = "Shield arrays hit Cpt!";
+PROGMEM const char DamageReportWeapons[] = "Weapons hit!";
+PROGMEM const char DamageReportShields[] = "Shield arrays hit!";
 PROGMEM const char DamageReportEngines[] = "Engines damaged sir!";
 
 PROGMEM const char CombatMenu_Player[] = "Player";

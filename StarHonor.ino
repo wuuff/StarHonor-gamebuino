@@ -97,6 +97,8 @@ void loop()
       PlayerShip->Update();
       PlayerShip->DrawOnMap();
 
+      /*
+      //Debug text
       arduboy.display.cursorX = 0;
       arduboy.display.cursorY = 0;
       arduboy.display.println(PlayerShip->MapPosition->x);
@@ -105,6 +107,7 @@ void loop()
       arduboy.display.println(PlayerShip->Velocity->x);
       arduboy.display.println(PlayerShip->Velocity->y);
       arduboy.display.println(PlayerShip->ShipRotation);
+      */
       
       #if !Debug
       _StarField->Move(PlayerShip->GetVelocity() * -1.0f);
@@ -259,9 +262,9 @@ void CreateStatusSelectionArrow()
 void CreateCombatSelectionArrow()
 {
   CombatLocations = new Vector2d*[3];
-  CombatLocations[0] = new Vector2d( 2, 43 );
-  CombatLocations[1] = new Vector2d( 2, 49 );
-  CombatLocations[2] = new Vector2d( 2, 56 );
+  CombatLocations[0] = new Vector2d( 2, 25 );
+  CombatLocations[1] = new Vector2d( 2, 32 );
+  CombatLocations[2] = new Vector2d( 2, 39 );
   CombatSelectionArrow = new SelectionArrow( CombatLocations, 3 );
 }
 
@@ -642,7 +645,7 @@ void EncouterUpdate()
     
     case 9: // Print Damage
       DrawCombatScreen( false );
-      Text::DisplayTextClear( typeBuffer, 0, 36, false, true );
+      Text::DisplayTextClear( typeBuffer, 0, 21, false, true );
       MenuWaitTime -= 1;
       if ( MenuWaitTime <= 0 && BButton )
       {
@@ -699,38 +702,38 @@ void DrawCombatScreen( bool DrawCommands )
 {
   // Left Side
   arduboy.display.setColor(BLACK);
-  arduboy.display.fillRect( 0, 16, 35, 24 ); //Fill rectangle with BLACK?
+  arduboy.display.fillRect( 0, 0, 35, 27 ); //Fill rectangle with BLACK?
   arduboy.display.setColor(WHITE);
-  arduboy.display.drawRect(0, 18, 35, 21);
+  arduboy.display.drawRect(0, 0, 35, 27);
   
-  Text::DisplayText(CombatMenu_Atk, 2, 20, true);
+  Text::DisplayText(CombatMenu_Atk, 2, 7, true);
   Text::ConvertIntToChar( PlayerShip->HP_Weapons );
-  Text::DisplayText( buffer, 22, 20, false );
+  Text::DisplayText( buffer, 22, 7, false );
   
-  Text::DisplayText(CombatMenu_Shld, 2, 26, true);
+  Text::DisplayText(CombatMenu_Shld, 2, 13, true);
   Text::ConvertIntToChar( PlayerShip->HP_Shields );
-  Text::DisplayText( buffer, 22, 26, false );
+  Text::DisplayText( buffer, 22, 13, false );
   
-  Text::DisplayText(CombatMenu_Hull, 2, 32, true);
+  Text::DisplayText(CombatMenu_Hull, 2, 19, true);
   Text::ConvertIntToChar( PlayerShip->HP_Hull );
-  Text::DisplayText( buffer, 22, 32, false);
+  Text::DisplayText( buffer, 22, 19, false);
 
-  Text::DisplayTextClear( CombatMenu_Player, 2, 8, true, false );
+  Text::DisplayText( CombatMenu_Player, 2, 1, true );
 
   // Right Side
-  Text::DisplayText( CombatMenu_Enemy, 100, 10, true );
   arduboy.display.setColor(BLACK);
-  arduboy.display.fillRect( 96, 18, 32, 22 );
+  arduboy.display.fillRect( 52, 0, 32, 27 );
   arduboy.display.setColor(WHITE);
-  arduboy.display.drawRect( 96, 18, 32, 21);
+  arduboy.display.drawRect( 52, 0, 32, 27);
+  Text::DisplayText( CombatMenu_Enemy, 54, 1, true );
   
-  Text::DisplayText(CombatMenu_Atk, 98, 20, true);
+  Text::DisplayText(CombatMenu_Atk, 54, 7, true);
   Text::ConvertIntToChar( LatestPlanetEncountered->Attack );
-  Text::DisplayText( buffer, 114, 20, false );
+  Text::DisplayText( buffer, 70, 7, false );
   
-  Text::DisplayText(CombatMenu_Def, 98, 26, true);
+  Text::DisplayText(CombatMenu_Def, 54, 13, true);
   Text::ConvertIntToChar( LatestPlanetEncountered->Defense );
-  Text::DisplayText( buffer, 114, 26, false );
+  Text::DisplayText( buffer, 70, 13, false );
 
   // Orders
   if ( DrawCommands )
@@ -750,12 +753,12 @@ void DrawCombatScreen( bool DrawCommands )
       AcceptMenuInput = false;
     }
   
-    Text::DisplayTextClear( Cmd_Atk, 8, 42, true, false );
-    Text::DisplayTextClear( Cmd_Repair, 8, 49, true, false );
-    Text::DisplayTextClear( Cmd_Flee, 8, 56, true, false );
+    Text::DisplayTextClear( Cmd_Atk, 8, 25, true, false );
+    Text::DisplayTextClear( Cmd_Repair, 8, 32, true, false );
+    Text::DisplayTextClear( Cmd_Flee, 8, 39, true, false );
   
     CombatSelectionArrow->Draw();
-    arduboy.display.drawRect( 0, 42, 124, 28 );
+    arduboy.display.drawRect( 0, 25, 84, 23 );
   }
 }
 

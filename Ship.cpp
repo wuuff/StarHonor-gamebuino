@@ -97,7 +97,7 @@ void Ship::DrawOnMap()
   if ( IsAlive )
   {
     //arduboy.drawBitmap( 56, 25, BitMap, 16, 16, 1 );  
-    arduboy.display.drawBitmap( 56, 25, BitMap );  
+    arduboy.display.drawBitmap( 38, 20, BitMap );  
   }
 }
 

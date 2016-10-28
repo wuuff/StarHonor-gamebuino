@@ -248,12 +248,12 @@ void GetInput()
 void CreateStatusSelectionArrow()
 {
   OverviewLocations = new Vector2d*[6];
-  OverviewLocations[0] = new Vector2d( 0, 6 );  // Ship Systems
-  OverviewLocations[1] = new Vector2d( 0, 13 );  // Ship Hull
-  OverviewLocations[2] = new Vector2d( 0, 20 );  // Ship Engines
-  OverviewLocations[3] = new Vector2d( 0, 27 );  // Crew
-  OverviewLocations[4] = new Vector2d( 0, 34 );  // Fuel
-  OverviewLocations[5] = new Vector2d( 0, 41 );  // Food
+  OverviewLocations[0] = new Vector2d( 0, -2 );  // Ship Systems
+  OverviewLocations[1] = new Vector2d( 0, 4 );  // Ship Hull
+  OverviewLocations[2] = new Vector2d( 0, 10 );  // Ship Engines
+  OverviewLocations[3] = new Vector2d( 0, 16 );  // Crew
+  OverviewLocations[4] = new Vector2d( 0, 22 );  // Fuel
+  OverviewLocations[5] = new Vector2d( 0, 28 );  // Food
 
   RepairSelectionArrow = new SelectionArrow( OverviewLocations, 6 );
   CurrentSelectionArrow = RepairSelectionArrow;
@@ -376,21 +376,21 @@ void ShipStatusLoop()
 
 void DrawShipStatusScreen()
 {
-  int StatusBarX = 66;
+  int StatusBarX = 56;
   int TextXPos = 10;
 
-  Text::DisplayText(ShipStatus, 42, 0, true);
-  Text::DisplayText(TCrew, TextXPos, 8, true);
-  Text::DisplayText(THull, TextXPos, 15, true);
-  Text::DisplayText(TWeapons, TextXPos, 22, true);
-  Text::DisplayText(TShields, TextXPos, 29, true);
-  Text::DisplayText(TEngines, TextXPos, 36, true);
-  Text::DisplayText(TFuel, TextXPos, 43, true);
+  //Text::DisplayText(ShipStatus, 42, 0, true);
+  Text::DisplayText(TCrew, TextXPos, 0, true);
+  Text::DisplayText(THull, TextXPos, 6, true);
+  Text::DisplayText(TWeapons, TextXPos, 12, true);
+  Text::DisplayText(TShields, TextXPos, 18, true);
+  Text::DisplayText(TEngines, TextXPos, 24, true);
+  Text::DisplayText(TFuel, TextXPos, 30, true);
 
   if ( RepairTarget != NoTarget && StatusBlinkTime > 30)
   {
     arduboy.display.setColor(BLACK);
-    arduboy.display.fillRect( TextXPos, 8 + 7 * RepairTarget, 40, 6 );
+    arduboy.display.fillRect( TextXPos, 0 + 6 * RepairTarget, 40, 6 );
     arduboy.display.setColor(WHITE);
   }
   else if (StatusBlinkTime < 0)
@@ -400,22 +400,22 @@ void DrawShipStatusScreen()
   
   //    DrawStatusBar( int x, int y, int length, int height, float fill )
   // 27,600 -> 27,322 ...wow  Just removing the array reference with the arithmetic offset  "OverviewLocation[0].y + 2"
-  Text::DisplayText( PlayerShip->crewCharArray, 66, 8, false);
-  Text::DisplayText( "/", 80, 8, false );
-  Text::DisplayText( PlayerShip->maxCrewCharArray, 86, 8, false );
+  Text::DisplayText( PlayerShip->crewCharArray, 56, 0, false);
+  Text::DisplayText( "/", 70, 0, false );
+  Text::DisplayText( PlayerShip->maxCrewCharArray, 76, 0, false );
 
-  DrawStatusBar( StatusBarX, 15, PlayerShip->Max_Hull, 4, 100 * PlayerShip->HP_Hull / PlayerShip->Max_Hull );
-  DrawStatusBar( StatusBarX, 22, PlayerShip->Max_Weapons, 4, 100 * PlayerShip->HP_Weapons / PlayerShip->Max_Weapons );
-  DrawStatusBar( StatusBarX, 29, PlayerShip->Max_Shields, 4, 100 * PlayerShip->HP_Shields / PlayerShip->Max_Shields );
-  DrawStatusBar( StatusBarX, 36, PlayerShip->Max_Engine, 4, 100 * PlayerShip->HP_Engine / PlayerShip->Max_Engine );
+  DrawStatusBar( StatusBarX, 6, PlayerShip->Max_Hull, 4, 100 * PlayerShip->HP_Hull / PlayerShip->Max_Hull );
+  DrawStatusBar( StatusBarX, 12, PlayerShip->Max_Weapons, 4, 100 * PlayerShip->HP_Weapons / PlayerShip->Max_Weapons );
+  DrawStatusBar( StatusBarX, 18, PlayerShip->Max_Shields, 4, 100 * PlayerShip->HP_Shields / PlayerShip->Max_Shields );
+  DrawStatusBar( StatusBarX, 24, PlayerShip->Max_Engine, 4, 100 * PlayerShip->HP_Engine / PlayerShip->Max_Engine );
 
-  Text::DisplayText( PlayerShip->fuelCharArray, StatusBarX, 43, false );
+  Text::DisplayText( PlayerShip->fuelCharArray, StatusBarX, 30, false );
 
   if ( PreviousGameState == Map )
   {
     if ( CurrentSelectionArrow->Position == 0 )
     {
-      Text::DisplayText( StatusHelp2, 0, 50, true );
+      Text::DisplayText( StatusHelp2, 0, 42, true );
       if (BButton)  // Triage
       {
          RepairTarget = static_cast<SystemTarget>( CurrentSelectionArrow->Position );
@@ -423,7 +423,7 @@ void DrawShipStatusScreen()
     }
     if ( CurrentSelectionArrow->Position > 0 && CurrentSelectionArrow->Position <= 4 )
     {
-      Text::DisplayText( StatusHelp, 0, 50, true );
+      Text::DisplayText( StatusHelp, 0, 42, true );
       if (BButton)  // Repair
       {
         RepairTarget = static_cast<SystemTarget>( CurrentSelectionArrow->Position );
@@ -431,14 +431,14 @@ void DrawShipStatusScreen()
     }
     else if ( CurrentSelectionArrow->Position == 5 )
     {
-      Text::DisplayText( StatusHelp4, 0, 50, true );
+      Text::DisplayText( StatusHelp4, 0, 42, true );
     }
   }
   else if ( PreviousGameState == Encounter )
   {
     if ( CurrentSelectionArrow->Position > 0 && CurrentSelectionArrow->Position <= 4 )
     {
-      Text::DisplayText( SpendEmergencyRepairs, 0, 50, true );
+      Text::DisplayText( SpendEmergencyRepairs, 0, 36, true );
       if (BButton && BattleRepairs > 0)  // Repair
       {
         RepairTarget = static_cast<SystemTarget>( CurrentSelectionArrow->Position );
@@ -454,20 +454,20 @@ void DrawShipStatusScreen()
 
     // Bubbles
     if ( BattleRepairsMax > 2 )
-      arduboy.display.drawBitmap(106, 58, Bubble_Empty_8_8);
+      arduboy.display.drawBitmap(84, 42, Bubble_Empty_8_8);
     if ( BattleRepairsMax > 1 )
-      arduboy.display.drawBitmap(94, 58, Bubble_Empty_8_8);
+      arduboy.display.drawBitmap(78, 42, Bubble_Empty_8_8);
     if ( BattleRepairsMax > 0 )
-      arduboy.display.drawBitmap(82, 58, Bubble_Empty_8_8);
+      arduboy.display.drawBitmap(72, 42, Bubble_Empty_8_8);
     
-    Text::DisplayText( EmergencyRepairs, 0, 58, true );
+    Text::DisplayText( EmergencyRepairs, 0, 42, true );
     
     if ( BattleRepairs > 2 )
-      arduboy.display.drawBitmap(106, 58, Bubble_8_8);
+      arduboy.display.drawBitmap(84, 42, Bubble_8_8);
     if ( BattleRepairs > 1 )
-      arduboy.display.drawBitmap(94, 58, Bubble_8_8);
+      arduboy.display.drawBitmap(78, 42, Bubble_8_8);
     if ( BattleRepairs > 0 )
-      arduboy.display.drawBitmap(82, 58, Bubble_8_8);
+      arduboy.display.drawBitmap(72, 42, Bubble_8_8);//82 originally
   }
 }
 

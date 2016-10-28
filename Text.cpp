@@ -244,7 +244,7 @@ PROGMEM const char TFood[] = "Food";
 PROGMEM const char TGoods[] = "Material";
 
 PROGMEM const char Repaired[] = " repaired";
-PROGMEM const char RedShirtsRepaired[] = "All hands back on duty";
+PROGMEM const char RedShirtsRepaired[] = "All hands on duty";
 PROGMEM const char HullRepaired[] = "Hull Repaired";
 PROGMEM const char WeaponsRepaired[] = "Weapon Systems 100%";
 PROGMEM const char ShieldsRepaired[] = "Shields restored";
@@ -258,8 +258,8 @@ PROGMEM const char ShipStatus[] = "Ship Status";
 PROGMEM const char StatusHelp[] = "\26-Assign Crews";
 PROGMEM const char StatusHelp2[] = "\26-Treat Crew";
 PROGMEM const char StatusHelp3[] = "Up+\26-Warp next sector";
-PROGMEM const char StatusHelp4[] = "3 Crystals needed to Warp";
-PROGMEM const char SpendEmergencyRepairs[] = "\26-Spend Emergency Repair";
+PROGMEM const char StatusHelp4[] = "Warp needs 3 Crystal";
+PROGMEM const char SpendEmergencyRepairs[] = "\26-Emergency Repair";
 PROGMEM const char EmergencyRepairs[] = "Emergency Repairs:";
 
 PROGMEM const char PrologueText1[] = "USS Arduino Log:\n-Most crew dead.\n-Sensors destroyed.\n-Other systems work.\n";
@@ -357,7 +357,7 @@ PROGMEM const char Defeat_A[] = "Multiple breaches!\nEscape Pods!";
 PROGMEM const char Defeat_B[] = "We're losing core\ncontainment! We...";
 PROGMEM const char Defeat_C[] = "The USS Arduino was\nlost to space";
 PROGMEM const char Defeat_D[] = "We've recieved new\norders from home..." ;
-PROGMEM const char Defeat_E[] = "...Final orders...\nRun with what's left\nThe phage took over\nIt's over...";
+PROGMEM const char Defeat_E[] = "...Final orders...\nRun with what's left\nThe phage took every\none...It's over...";
 
 PROGMEM const char BeamRecovery[] = "We beamed recovery crews down";
 PROGMEM const char Upgrade[] = " upgrade";

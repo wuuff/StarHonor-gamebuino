@@ -113,7 +113,7 @@ void DrawMarkers()
 
   //arduboy.drawRect( ( ( PlayerShip->MapPosition->x + abs(MapUpperBounds->x ) ) / ( MapLowerBounds->x - MapUpperBounds->x ) ) * 125, 0, 3, 3, 1 );
   //arduboy.drawRect( 0, ( PlayerShip->MapPosition->y + (( MapLowerBounds->y - MapUpperBounds->y ) / 2.0f ))  / ( MapLowerBounds->y - MapUpperBounds->y ) * 61, 3, 3, 1 );
-  arduboy.display.drawRect( ( ( PlayerShip->MapPosition->x + abs(MapUpperBounds->x ) ) / ( MapLowerBounds->x - MapUpperBounds->x ) ) * 125, 0, 3, 3 );
-  arduboy.display.drawRect( 0, ( PlayerShip->MapPosition->y + (( MapLowerBounds->y - MapUpperBounds->y ) / 2.0f ))  / ( MapLowerBounds->y - MapUpperBounds->y ) * 61, 3, 3 );
+  arduboy.display.drawRect( ( ( PlayerShip->MapPosition->x + abs(MapUpperBounds->x ) ) / ( MapLowerBounds->x - MapUpperBounds->x ) ) * 81, 0, 3, 3 );
+  arduboy.display.drawRect( 0, ( PlayerShip->MapPosition->y + (( MapLowerBounds->y - MapUpperBounds->y ) / 2.0f ))  / ( MapLowerBounds->y - MapUpperBounds->y ) * 45, 3, 3 );
 }
 

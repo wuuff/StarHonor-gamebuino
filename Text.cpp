@@ -78,18 +78,18 @@ int Text::DisplayTextClear( char* text, int x, int y, bool fromProgMem, bool wit
   textOffset = 2;
 
   arduboy.display.setColor(BLACK);
-  arduboy.display.fillRect( 0, y, 128, 9 );
+  arduboy.display.fillRect( 0, y, 84, 9 );
   arduboy.display.setColor(WHITE);
-  if ( withBorder ) arduboy.display.drawRect(0, y, 128, 9);
+  if ( withBorder ) arduboy.display.drawRect(0, y, 84, 9);
   int linesDisplayed = Text::DisplayText( text, x, y, fromProgMem );
 
   if ( linesDisplayed > 1 )
   {
     int clearHeight = ( tHeight + tPadding ) * linesDisplayed + 3;
     arduboy.display.setColor(BLACK);
-    arduboy.display.fillRect( 0, y, 128, clearHeight );
+    arduboy.display.fillRect( 0, y, 84, clearHeight );
     arduboy.display.setColor(WHITE);
-    if ( withBorder ) arduboy.display.drawRect(0, y, 128, clearHeight);
+    if ( withBorder ) arduboy.display.drawRect(0, y, 84, clearHeight);
     Text::DisplayText( text, x, y, fromProgMem );
   }
 

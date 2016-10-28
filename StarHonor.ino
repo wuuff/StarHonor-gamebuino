@@ -123,7 +123,7 @@ void loop()
 
       if ( CanHail )
       {
-        Text::DisplayTextClear( Hail, 12, 56, true, false );
+        Text::DisplayTextClear( Hail, 0, 40, true, false );
         if ( BButton )
         {
           ChangeGameState( Encounter );
@@ -132,7 +132,7 @@ void loop()
       }
       else if ( PlayerShip->Fuel >= 3 )
       {
-        Text::DisplayText( StatusHelp3, 0, 58, true );
+        Text::DisplayText( StatusHelp3, 0, 40, true );
         if ( DPad == Up && BButton )
         {
           ChangeGameState( Warping );
@@ -981,7 +981,7 @@ void ClockUpdate( bool runnning )
   else
     Text::ConvertIntToChar( seconds, clockBuffer, 2 );
   clockBuffer[4] = '\0';
-  Text::DisplayText( clockBuffer, 100, 52, false );
+  Text::DisplayText( clockBuffer, 84-16, 40, false );
 }
 
 /*

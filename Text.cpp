@@ -232,7 +232,7 @@ char* Combat_Result;
 char* Status_Update;
 
 PROGMEM const char TitleScreen[] = "Star Honor";
-PROGMEM const char TitleScreen2[] = "By Wenceslao Villanueva 2016";
+PROGMEM const char TitleScreen2[] = "Wenceslao Villanueva";
 
 PROGMEM const char THull[] = "Hull";
 PROGMEM const char TWeapons[] = "Weapons";
@@ -255,19 +255,19 @@ PROGMEM const char EnginesRepaired[] = "Engines at full";
 const char* RepairedText[] { RedShirtsRepaired, HullRepaired, WeaponsRepaired, ShieldsRepaired, EnginesRepaired };
 
 PROGMEM const char ShipStatus[] = "Ship Status";
-PROGMEM const char StatusHelp[] = "B Button - Assign Crews";
-PROGMEM const char StatusHelp2[] = "B Button - Treat Crew";
-PROGMEM const char StatusHelp3[] = "Up + B Button - Warp next sector";
-PROGMEM const char StatusHelp4[] = "  3 Crystals needed to Warp";
-PROGMEM const char SpendEmergencyRepairs[] = "B - Spend Emergency Repair";
+PROGMEM const char StatusHelp[] = "\26-Assign Crews";
+PROGMEM const char StatusHelp2[] = "\26-Treat Crew";
+PROGMEM const char StatusHelp3[] = "Up+\26-Warp next sector";
+PROGMEM const char StatusHelp4[] = "3 Crystals needed to Warp";
+PROGMEM const char SpendEmergencyRepairs[] = "\26-Spend Emergency Repair";
 PROGMEM const char EmergencyRepairs[] = "Emergency Repairs:";
 
-PROGMEM const char PrologueText1[] = "USS Arduino Log Update:\n- Most the crew is dead.\n- Sensors are unsalvageable.\n- Engines and Comms functional.\n- Shields...intact\n";
-PROGMEM const char PrologueText2[] = "  The Captain is dead. At least\nwe have the cure for the phage.\nWe must get it to homeworld.\nYou're Captain now.\nThe Bridge is yours. Orders?";
+PROGMEM const char PrologueText1[] = "USS Arduino Log:\n-Most crew dead.\n-Sensors destroyed.\n-Other systems work.\n";
+PROGMEM const char PrologueText2[] = "Captain dead, but we\nhave the phage cure.\nWe must get home. You\nare Captain. Orders?";
 
-PROGMEM const char GameWin1[] = "Captain, we made it.\nDispensing the cure in the\natmosphere";
-PROGMEM const char GameWin2[] = "Scans are coming back. The\ncure is working.";
-PROGMEM const char GameWin3[] = "Captain! Communication from\nCommand...demanding we power\ndown and prepare to be boarded?";
+PROGMEM const char GameWin1[] = "Captain, we made it.\nDispensing cure into\natmosphere";
+PROGMEM const char GameWin2[] = "Scans coming back.\nThe cure is working.";
+PROGMEM const char GameWin3[] = "Captain! Comms from\nCommand: power down\nand prepare to be\nboarded?";
 PROGMEM const char GameWin4[] = "To Be Continued...";
 
 PROGMEM const char Engage_Stronger_A[] = "I'm sure we can talk this out";
@@ -325,45 +325,45 @@ PROGMEM const char Result_Negative_B[] = "All stations reporting damage";
 
 const char* Result_Negative[] { Result_Negative_A, Result_Negative_B };
 
-PROGMEM const char Hail[] = "B: Establish communication";
+PROGMEM const char Hail[] = "B: Establish comms";
 PROGMEM const char Yes[] = "Yes";
 PROGMEM const char No[] = "No";
 
 PROGMEM const char Negative_Response_A[] = "Surrender or else!";
-PROGMEM const char Negative_Response_B[] = "We have you now scum!";
-PROGMEM const char Negative_Response_C[] = "For the Empire I will\ndestroy you!";
+PROGMEM const char Negative_Response_B[] = "We got you now scum!";
+PROGMEM const char Negative_Response_C[] = "For the Empire I'll\ndestroy you!";
 
 const char* Negative_Response[] { Negative_Response_A, Negative_Response_B, Negative_Response_C };
 
-PROGMEM const char Neutral_Response_A[] = "It's nice to meet new species";
+PROGMEM const char Neutral_Response_A[] = "It's nice to meet\nnew species";
 PROGMEM const char Neutral_Response_B[] = "... *no response*";
-PROGMEM const char Neutral_Response_C[] = "We're not buying, leave!";
-PROGMEM const char Neutral_Response_D[] = "Greetings Traveller...";
+PROGMEM const char Neutral_Response_C[] = "We're not buying,\nleave!";
+PROGMEM const char Neutral_Response_D[] = "Greetings Traveller.";
 
 const char* Neutral_Response[] { Neutral_Response_A, Neutral_Response_B, Neutral_Response_C, Neutral_Response_D };
 
-PROGMEM const char Victory_A[] = "Cpt. we are victorious";
-PROGMEM const char Victory_B[] = "Cpt. targets neutralized";
+PROGMEM const char Victory_A[] = "We are victorious";
+PROGMEM const char Victory_B[] = "Targets neutralized";
 
 const char* Positive_Response[] { Positive_Response_A, Positive_Response_B, Positive_Response_C };
                                           //12345678901234567890123456789012"
-PROGMEM const char Positive_Response_A[] = "Stand down, we mean no harm";
-PROGMEM const char Positive_Response_B[] = "We want to help. Have this..";
-PROGMEM const char Positive_Response_C[] = "Your people need you. Take this";
+PROGMEM const char Positive_Response_A[] = "Stand down,\nwe mean no harm";
+PROGMEM const char Positive_Response_B[] = "We want to help.\nHave this.";
+PROGMEM const char Positive_Response_C[] = "Your people need you\nTake this";
 
 const char* Victory[] { Victory_A, Victory_B };
 
-PROGMEM const char Defeat_A[] = "Cpt. multiple breaches\nDeploying Escape Pods!";
-PROGMEM const char Defeat_B[] = "Cpt. we're losing core\ncontainment! We can't...";
-PROGMEM const char Defeat_C[] = "The crew of the USS Arduino\nwere never heard from again";
-PROGMEM const char Defeat_D[] = "Cpt, we've recieved a message\nfrom home. They're new orders" ;
-PROGMEM const char Defeat_E[] = "...Final orders...\nTo take what's left and run\nThe phage took everyone\nIt's over...";
+PROGMEM const char Defeat_A[] = "Multiple breaches!\nEscape Pods!";
+PROGMEM const char Defeat_B[] = "We're losing core\ncontainment! We...";
+PROGMEM const char Defeat_C[] = "The USS Arduino was\nlost to space";
+PROGMEM const char Defeat_D[] = "We've recieved new\norders from home..." ;
+PROGMEM const char Defeat_E[] = "...Final orders...\nRun with what's left\nThe phage took over\nIt's over...";
 
 PROGMEM const char BeamRecovery[] = "We beamed recovery crews down";
 PROGMEM const char Upgrade[] = " upgrade";
-PROGMEM const char DiscoveredUpgrade[] = "We discovered an upgrade\n for the: ";
-PROGMEM const char DiscoveredGood[] = "Recovery crews found:\n";
-PROGMEM const char DiscoveredNothing[] = "Sir, nothing here is\nof any use to us";
+PROGMEM const char DiscoveredUpgrade[] = "Discovered upgrade\nfor the: ";
+PROGMEM const char DiscoveredGood[] = "Found:\n";
+PROGMEM const char DiscoveredNothing[] = "Sir, found\nnothing of use";
 PROGMEM const char CapturedCrew[] = "captured crew";
 
 PROGMEM const char CombatTurn[] = "Combat Turn: ";
@@ -373,11 +373,11 @@ PROGMEM const char CombatTakeDamage3[] = "Shields absorbed ";
 PROGMEM const char CombatTakeDamage4[] = "Weapons did ";
 PROGMEM const char ShieldsHolding[] = "Shields holding...";
 PROGMEM const char ShieldsDown[] = "Shields are down!\n";
-PROGMEM const char DamageReportCrew[] = "Casualty reports coming in!";
-PROGMEM const char DamageReportHull[] = "Hull damage reported!";
-PROGMEM const char DamageReportWeapons[] = "Weapon systems hit, Atk down!";
+PROGMEM const char DamageReportCrew[] = "We have casualties!";
+PROGMEM const char DamageReportHull[] = "Hull damage!";
+PROGMEM const char DamageReportWeapons[] = "Weapons hit, Atk down!";
 PROGMEM const char DamageReportShields[] = "Shield arrays hit Cpt!";
-PROGMEM const char DamageReportEngines[] = "Engines are damaged sir!";
+PROGMEM const char DamageReportEngines[] = "Engines damaged sir!";
 
 PROGMEM const char CombatMenu_Player[] = "Player";
 PROGMEM const char CombatMenu_Atk[] = "Atk:";

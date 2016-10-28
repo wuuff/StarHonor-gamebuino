@@ -321,17 +321,18 @@ void PrologueLoop()
   switch ( SequenceStage )
   {
     case 1:
-      if ( TextManager->DisplayTextOverTimeClear( PrologueText1, 0, 0 ) || BButton )
+      if ( TextManager->DisplayTextOverTimeClear( PrologueText1, -2, -2 ) || BButton )
         { SequenceStage++; TextManager->NewDisplayTextOverTime(); }
     break;
     case 2:
-      Text::DisplayText( PrologueText1, 2, 2, true );
-      if ( TextManager->DisplayTextOverTimeClear( PrologueText2, 0, 31 ) || BButton )
+      
+      if ( TextManager->DisplayTextOverTimeClear( PrologueText2, -2, 22 ) || BButton )
         SequenceStage++;
+      Text::DisplayText( PrologueText1, 0, 0, true );
     break;
     case 3:
-      Text::DisplayText( PrologueText1, 2, 2, true );
-      Text::DisplayText( PrologueText2, 2, 33, true );
+      Text::DisplayText( PrologueText1, 0, 0, true );
+      Text::DisplayText( PrologueText2, 0, 24, true );
       if ( BButton )
        ChangeGameState(Map);
      break;
@@ -767,17 +768,17 @@ void GenerateReward( Loot reward )
   if (reward == 0)
   {
 //    index = 25;
-    index = Text::CopyIntoBuffer( DiscoveredNothing, 0, 37);
+    index = Text::CopyIntoBuffer( DiscoveredNothing, 0, 25);
   }
   else if (reward > 4)
   {
 //    index = 22;
-    index = Text::CopyIntoBuffer( DiscoveredGood, 0, 22 );
+    index = Text::CopyIntoBuffer( DiscoveredGood, 0, 7 );
   }
   else
   {
 //    index = 35;
-    index = Text::CopyIntoBuffer( DiscoveredUpgrade, 0, 35 );
+    index = Text::CopyIntoBuffer( DiscoveredUpgrade, 0, 28 );
   }
 
   upgradeAmount = PlayerShip->Upgrade(reward);
@@ -871,8 +872,8 @@ void WinGameLoop()
   if ( SequenceStage < 4 )
   {
 //    _StarField->Draw();
-    arduboy.display.drawBitmap( 112, 0, PlanetHome_16_64, 16, 64 );
-    arduboy.display.drawBitmap( 56, 25, PlayerBitMaps[2], 16, 16 );
+    arduboy.display.drawBitmap( 68, 0, PlanetHome_16_64, 16, 64 );
+    arduboy.display.drawBitmap( 42, 24, PlayerBitMaps[2], 16, 16 );
 
     ClockUpdate( false );
   }
@@ -981,7 +982,7 @@ void ClockUpdate( bool runnning )
   else
     Text::ConvertIntToChar( seconds, clockBuffer, 2 );
   clockBuffer[4] = '\0';
-  Text::DisplayText( clockBuffer, 84-16, 40, false );
+  Text::DisplayText( clockBuffer, 84-16, 34, false );
 }
 
 /*

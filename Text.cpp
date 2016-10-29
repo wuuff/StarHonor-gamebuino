@@ -260,7 +260,7 @@ PROGMEM const char StatusHelp2[] = "\26-Treat Crew";
 PROGMEM const char StatusHelp3[] = "Up+\26-Warp next sector";
 PROGMEM const char StatusHelp4[] = "Warp needs 3 Crystal";
 PROGMEM const char SpendEmergencyRepairs[] = "\26-Emergency Repair";
-PROGMEM const char EmergencyRepairs[] = "Emergency Repairs:";
+PROGMEM const char EmergencyRepairs[] = "Repairs:";
 
 PROGMEM const char PrologueText1[] = "USS Arduino Log:\n-Most crew dead.\n-Sensors destroyed.\n-Other systems work.\n";
 PROGMEM const char PrologueText2[] = "Captain dead, but we\nhave the phage cure.\nWe must get home. You\nare Captain. Orders?";

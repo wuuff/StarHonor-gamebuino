@@ -463,20 +463,20 @@ void DrawShipStatusScreen()
 
     // Bubbles
     if ( BattleRepairsMax > 2 )
-      arduboy.display.drawBitmap(84, 42, Bubble_Empty_8_8);
+      arduboy.display.drawBitmap(44, 42, Bubble_Empty_8_8);
     if ( BattleRepairsMax > 1 )
-      arduboy.display.drawBitmap(78, 42, Bubble_Empty_8_8);
+      arduboy.display.drawBitmap(38, 42, Bubble_Empty_8_8);
     if ( BattleRepairsMax > 0 )
-      arduboy.display.drawBitmap(72, 42, Bubble_Empty_8_8);
+      arduboy.display.drawBitmap(32, 42, Bubble_Empty_8_8);
     
     Text::DisplayText( EmergencyRepairs, 0, 42, true );
     
     if ( BattleRepairs > 2 )
-      arduboy.display.drawBitmap(84, 42, Bubble_8_8);
+      arduboy.display.drawBitmap(44, 42, Bubble_8_8);
     if ( BattleRepairs > 1 )
-      arduboy.display.drawBitmap(78, 42, Bubble_8_8);
+      arduboy.display.drawBitmap(38, 42, Bubble_8_8);
     if ( BattleRepairs > 0 )
-      arduboy.display.drawBitmap(72, 42, Bubble_8_8);//82 originally
+      arduboy.display.drawBitmap(32, 42, Bubble_8_8);//82 originally
   }
 }
 

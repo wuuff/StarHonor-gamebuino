@@ -101,9 +101,10 @@ void loop()
       //Debug text
       arduboy.display.cursorX = 0;
       arduboy.display.cursorY = 0;
-      arduboy.display.println(PlayerShip->MapPosition->x);
+      arduboy.display.print(PlayerShip->MapPosition->x);
+      arduboy.display.print(" ");
       arduboy.display.println(PlayerShip->MapPosition->y);
-      arduboy.display.println(DPad);
+      /*arduboy.display.println(DPad);
       arduboy.display.println(PlayerShip->Velocity->x);
       arduboy.display.println(PlayerShip->Velocity->y);
       arduboy.display.println(PlayerShip->ShipRotation);

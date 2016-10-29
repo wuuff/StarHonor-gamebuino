@@ -75,13 +75,14 @@ void MapLoop()
 void DrawMap()
 {
   if ( Planets == NULL ) return;
-  
+
   // Draw Planets
   for ( int i(0); i < PlanetsPerMap; i++ )
   {
     Vector2d distance = *Planets[i]->MapPosition - *PlayerShip->MapPosition;
     
-    if ( abs( distance.x ) < 80 || abs( distance.y ) < 48 )
+    //if ( abs( distance.x ) < 80 || abs( distance.y ) < 48 )
+    if ( abs( distance.x ) < 58 && abs( distance.y ) < 40 )
     {
       //arduboy.drawBitmap( distance.x + 56, distance.y + 24, Planets[i]->BitMap, 16, 16, 1 );
       arduboy.display.drawBitmap( distance.x + 38, distance.y + 20, Planets[i]->BitMap );

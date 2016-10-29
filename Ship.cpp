@@ -118,12 +118,12 @@ void Ship::PlayerUpdate()
   if ( DPad == UpLeft || DPad == Left || DPad == DownLeft )
   {
     ShipRotation -= RotationRate * DeltaTime;
-    ( ShipRotation > 360 ) ? ShipRotation -= 360 : ( ( ShipRotation < 0 ) ? ShipRotation += 360 : ShipRotation );
+    ( ShipRotation >= 360 ) ? ShipRotation -= 360 : ( ( ShipRotation < 0 ) ? ShipRotation += 360 : ShipRotation );
   }
   else if (DPad == UpRight || DPad == Right || DPad == DownRight )
   {
     ShipRotation += RotationRate * DeltaTime;
-    ( ShipRotation > 360 ) ? ShipRotation -= 360 : ( ( ShipRotation < 0 ) ? ShipRotation += 360 : ShipRotation );
+    ( ShipRotation >= 360 ) ? ShipRotation -= 360 : ( ( ShipRotation < 0 ) ? ShipRotation += 360 : ShipRotation );
   }
 
   int rotation = ShipRotation / 45;

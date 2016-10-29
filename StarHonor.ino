@@ -404,10 +404,18 @@ void DrawShipStatusScreen()
   Text::DisplayText( "/", 70, 0, false );
   Text::DisplayText( PlayerShip->maxCrewCharArray, 76, 0, false );
 
-  DrawStatusBar( StatusBarX, 6, PlayerShip->Max_Hull, 4, 100 * PlayerShip->HP_Hull / PlayerShip->Max_Hull );
-  DrawStatusBar( StatusBarX, 12, PlayerShip->Max_Weapons, 4, 100 * PlayerShip->HP_Weapons / PlayerShip->Max_Weapons );
-  DrawStatusBar( StatusBarX, 18, PlayerShip->Max_Shields, 4, 100 * PlayerShip->HP_Shields / PlayerShip->Max_Shields );
-  DrawStatusBar( StatusBarX, 24, PlayerShip->Max_Engine, 4, 100 * PlayerShip->HP_Engine / PlayerShip->Max_Engine );
+  arduboy.display.drawRoundRect( StatusBarX, 6, PlayerShip->Max_Hull+2, 4, 2);
+  arduboy.display.fillRoundRect( StatusBarX, 6, PlayerShip->HP_Hull+2, 4, 2);
+  arduboy.display.drawRoundRect( StatusBarX, 12, PlayerShip->Max_Weapons+2, 4, 2);
+  arduboy.display.fillRoundRect( StatusBarX, 12, PlayerShip->HP_Weapons+2, 4, 2);
+  arduboy.display.drawRoundRect( StatusBarX, 18, PlayerShip->Max_Shields+2, 4, 2);
+  arduboy.display.fillRoundRect( StatusBarX, 18, PlayerShip->HP_Shields+2, 4, 2);
+  arduboy.display.drawRoundRect( StatusBarX, 24, PlayerShip->Max_Engine+2, 4, 2);
+  arduboy.display.fillRoundRect( StatusBarX, 24, PlayerShip->HP_Engine+2, 4, 2);
+  //DrawStatusBar( StatusBarX, 6, PlayerShip->Max_Hull, 4, 100 * PlayerShip->HP_Hull / PlayerShip->Max_Hull );
+  //DrawStatusBar( StatusBarX, 12, PlayerShip->Max_Weapons, 4, 100 * PlayerShip->HP_Weapons / PlayerShip->Max_Weapons );
+  //DrawStatusBar( StatusBarX, 18, PlayerShip->Max_Shields, 4, 100 * PlayerShip->HP_Shields / PlayerShip->Max_Shields );
+  //DrawStatusBar( StatusBarX, 24, PlayerShip->Max_Engine, 4, 100 * PlayerShip->HP_Engine / PlayerShip->Max_Engine );
 
   Text::DisplayText( PlayerShip->fuelCharArray, StatusBarX, 30, false );
 
@@ -815,7 +823,7 @@ void GenerateReward( Loot reward )
 
 
 //static void DrawStatusBar( int x, int y, int length, int height, float fill )  // To save about 100 bytes
-static void DrawStatusBar( int x, int y, int length, int height, int fill )
+/*static void DrawStatusBar( int x, int y, int length, int height, int fill )
 {
   length *= 2;
   int fillTo = x + floor( fill * length / 100.0f );
@@ -840,7 +848,7 @@ static void DrawStatusBar( int x, int y, int length, int height, int fill )
       arduboy.display.drawLine( startX, startY, fillTo , startY );
     }
   }
-}
+}*/
 
 void ResetPlayer()
 {
@@ -875,8 +883,8 @@ void WinGameLoop()
   if ( SequenceStage < 4 )
   {
 //    _StarField->Draw();
-    arduboy.display.drawBitmap( 68, 0, PlanetHome_16_64, 16, 64 );
-    arduboy.display.drawBitmap( 42, 24, PlayerBitMaps[2], 16, 16 );
+    arduboy.display.drawBitmap( 68, 0, PlanetHome_16_64 );
+    arduboy.display.drawBitmap( 42, 24, PlayerBitMaps[2] );
 
     ClockUpdate( false );
   }

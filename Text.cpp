@@ -17,7 +17,7 @@ Text* TextManager;
 
 int Text::DisplayText( char* text, int x, int y, bool fromProgMem )
 {
-  const uint8_t *bitmap = font;
+  //const uint8_t *bitmap = font;
   char* current = text;
   int currentSpacing = 0;
   int currentX = x + textOffset;
@@ -38,7 +38,7 @@ int Text::DisplayText( char* text, int x, int y, bool fromProgMem )
     }
     
     int character = (int) ( fromProgMem ? pgm_read_byte( &current[0] ) : current[0] );
-    int row = 1;
+    /*int row = 1;
     if ( character >= 97 )
     {
       row = 3;
@@ -56,7 +56,7 @@ int Text::DisplayText( char* text, int x, int y, bool fromProgMem )
     rowBitSize = row * rowBitSize;
     int bitMapIndex = rowBitSize + ( ( character % 32 ) * 4 );
     const uint8_t *drawAt = bitmap;
-    drawAt += bitMapIndex;
+    drawAt += bitMapIndex;*/
     //TODO: Text might be a bit of a trouble to adapt
     arduboy.display.drawChar( currentX + currentSpacing, currentY, character, 1);
     //arduboy.drawBitmap( currentX + currentSpacing, currentY, drawAt, tWidth, tHeight, 1 );

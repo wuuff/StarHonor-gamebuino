@@ -28,7 +28,7 @@ void setup() {
   //arduboy.start();
   arduboy.begin();
   //arduboy.display();
-  arduboy.titleScreen();
+  arduboy.titleScreen(F("Star Honor\nWenceslao Villanueva\nPort by Wuuff"));
   arduboy.battery.show = false;
   //arduboy.initRandomSeed();
   arduboy.pickRandomSeed();
@@ -243,6 +243,10 @@ void GetInput()
   {
     newButtonInputAllowed = false;
     BButton = true;
+  }
+  if ( arduboy.buttons.pressed( BTN_C ) ){
+    arduboy.titleScreen(F("Paused"));
+    arduboy.battery.show = false;
   }
 }
 

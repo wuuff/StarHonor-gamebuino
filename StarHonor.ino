@@ -108,6 +108,8 @@ void loop()
       arduboy.display.println(PlayerShip->Velocity->x);
       arduboy.display.println(PlayerShip->Velocity->y);
       arduboy.display.println(PlayerShip->ShipRotation);
+      arduboy.display.drawFastVLine(84/2,0,48);
+      arduboy.display.drawFastHLine(0,48/2,84);
       */
       
       #if !Debug
@@ -889,7 +891,8 @@ void WinGameLoop()
   {
 //    _StarField->Draw();
     arduboy.display.drawBitmap( 68, 0, PlanetHome_16_64 );
-    arduboy.display.drawBitmap( 42, 24, PlayerBitMaps[2] );
+    //arduboy.display.drawBitmap( 42, 24, PlayerBitMaps[2] );
+    arduboy.display.drawBitmap( 36, 18, PlayerBitMaps[2] );
 
     ClockUpdate( false );
   }

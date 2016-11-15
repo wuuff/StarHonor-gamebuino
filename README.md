@@ -1,3 +1,12 @@
+# StarHonor for Gamebuino
+Unofficial Gamebuino port by wuuff
+
+This port is intended to be mostly faithful to the original, but due to the size of the Gamebuino screen, there are minor differences.  Here is a short list of changes:
+
+- Much of the text is shortened, and some sentences are completely rewritten in order to use just a few less characters.
+- The interface has been shrunk significantly.  There is a smaller viewport, and therefore it may be harder to find planets.
+- The health meters in the status screen are drawn in a different way that uses less program storage but looks slightly less fancy.
+
 # StarHonor
 Star Honor game for Arduboy by Wenceslao Villanueva Jr
 
